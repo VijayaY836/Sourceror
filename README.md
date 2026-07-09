@@ -83,7 +83,7 @@ Requires **Python 3.10+**.
 
 ```bash
 # 1. clone
-git clone https://github.com/<you>/sourcerer-docqa.git
+git clone https://github.com/VijayaY836/Sourceror/tree/main
 cd sourcerer-docqa
 
 # 2. install
