@@ -7,8 +7,7 @@ Built as a single service: a FastAPI backend that runs a full Retrieval-Augmente
 Generation pipeline and serves a polished web UI from the same origin. One command,
 one URL, no separate frontend build.
 
-> Tip: record a short screen capture or drop a screenshot here once it's running —
-> a GIF of an upload + a couple of questions makes the repo land instantly.
+Demo Video : https://drive.google.com/file/d/1oCf1CyiPOjxB5ZlVqSnqYyqdcVax3dNi/view?usp=sharing
 
 ---
 
@@ -148,17 +147,6 @@ Interactive API docs at **http://localhost:8000/docs**.
    to the passage it came from — this visibly proves retrieval is working.
 
 ---
-
-## Deployment (optional)
-
-Single service, so it deploys as one web process. On Render / Railway / Fly:
-
-- Build: `pip install -r requirements.txt`
-- Start: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
-- Set `OPENROUTER_API_KEY` in the environment.
-
-Note: free tiers with ephemeral disks reset `data/` on redeploy (re-upload after
-a restart). Mount a persistent volume at `data/` to keep the index.
 
 ---
 
