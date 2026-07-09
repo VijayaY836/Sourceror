@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Marginalia — Document Q&A</title>
+<title>Sourcerer — Document Q&A</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;450;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -230,7 +230,21 @@
   }
 
   /* ---------------- Main ---------------- */
-  main { display: flex; flex-direction: column; min-width: 0; min-height: 0; }
+  main { display: flex; flex-direction: column; min-width: 0; min-height: 0; position: relative; }
+  .clear-btn {
+    position: absolute; top: 14px; right: 22px; z-index: 5;
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(255,255,255,.82);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--line); color: var(--ink-dim);
+    border-radius: 20px; padding: 6px 13px; font-size: 12.5px;
+    font-family: inherit; cursor: pointer;
+    box-shadow: 0 2px 8px rgba(30,35,51,.06);
+    transition: color .15s, border-color .15s, transform .1s;
+  }
+  .clear-btn:hover { color: var(--coral); border-color: #f2c3cb; }
+  .clear-btn:active { transform: translateY(1px); }
+  .clear-btn[hidden] { display: none; }
   .banner {
     display: none;
     background: #fff4e6;
@@ -374,7 +388,7 @@
   </div>
   <aside>
     <div class="brand">
-      <h1>Marginalia<span class="dot">.</span></h1>
+      <h1>Sourcerer<span class="dot">.</span></h1>
       <p>Ask your documents. Read the sources.</p>
     </div>
 
@@ -394,6 +408,7 @@
   </aside>
 
   <main>
+    <button class="clear-btn" id="clearBtn" hidden>↺ Clear chat</button>
     <div class="banner" id="banner">
       No LLM key detected. Add <code>OPENROUTER_API_KEY</code> to your <code>.env</code> and restart to generate answers.
     </div>
@@ -431,7 +446,16 @@ const api = {
 const el = (id) => document.getElementById(id);
 const thread = el("thread"), threadInner = el("threadInner");
 const input = el("input"), send = el("send");
+const clearBtn = el("clearBtn");
 let documents = [], history = [], busy = false;
+
+const WELCOME_HTML = threadInner.innerHTML;   // saved so "Clear chat" can restore it
+
+clearBtn.onclick = () => {
+  threadInner.innerHTML = WELCOME_HTML;
+  history = [];
+  clearBtn.hidden = true;
+};
 
 /* ---- init ---- */
 (async () => {
@@ -524,11 +548,12 @@ async function ask() {
   const q = input.value.trim();
   if (!q || busy) return;
   el("welcome")?.remove();
+  clearBtn.hidden = false;
   busy = true; send.disabled = true;
   input.value = ""; input.style.height = "auto";
 
   addMessage("you", `<div class="bubble user">${escapeHtml(q)}</div>`);
-  const thinking = addMessage("marginalia",
+  const thinking = addMessage("sourcerer",
     `<div class="thinking">Searching the documents<span>…</span></div>`);
   history.push({ role: "user", content: q });
 

@@ -1,4 +1,4 @@
-# Marginalia — AI Document Q&A (RAG)
+# Sourcerer — AI Document Q&A (RAG)
 
 Upload documents, ask questions in plain language, and get answers grounded in
 the source text — with the exact retrieved passages shown for every answer.
@@ -84,8 +84,8 @@ Requires **Python 3.10+**.
 
 ```bash
 # 1. clone
-git clone https://github.com/<you>/marginalia-docqa.git
-cd marginalia-docqa
+git clone https://github.com/<you>/sourcerer-docqa.git
+cd sourcerer-docqa
 
 # 2. install
 python -m venv .venv
