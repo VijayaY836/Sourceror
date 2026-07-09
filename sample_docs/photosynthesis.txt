@@ -1,0 +1,33 @@
+Photosynthesis: A Short Primer
+
+Photosynthesis is the process by which green plants, algae, and some bacteria
+convert light energy into chemical energy stored in glucose. It takes place
+mainly in the leaves of plants, inside organelles called chloroplasts. The green
+pigment chlorophyll, found in the chloroplasts, absorbs light — most strongly in
+the blue and red parts of the spectrum — and reflects green light, which is why
+most plants appear green.
+
+The overall reaction can be summarised as: six molecules of carbon dioxide plus
+six molecules of water, in the presence of light energy, produce one molecule of
+glucose and six molecules of oxygen.
+
+Photosynthesis occurs in two stages. The first stage, the light-dependent
+reactions, takes place in the thylakoid membranes of the chloroplast. Here, light
+energy splits water molecules (photolysis), releasing oxygen as a by-product and
+generating the energy carriers ATP and NADPH.
+
+The second stage, the light-independent reactions (also called the Calvin cycle),
+takes place in the stroma of the chloroplast. It does not require light directly.
+Instead, it uses the ATP and NADPH produced in the first stage to fix carbon
+dioxide into glucose through a series of enzyme-controlled steps.
+
+Several factors affect the rate of photosynthesis. Light intensity, carbon
+dioxide concentration, and temperature are the three main limiting factors. As
+light intensity increases, the rate of photosynthesis rises until another factor
+becomes limiting. Temperature affects the enzymes involved: too cold and they
+work slowly, too hot and they begin to denature, typically above about 40 degrees
+Celsius for most plants.
+
+Photosynthesis is fundamental to life on Earth. It is the primary source of
+oxygen in the atmosphere and forms the base of nearly every food chain, capturing
+the solar energy that ultimately feeds most living organisms.
